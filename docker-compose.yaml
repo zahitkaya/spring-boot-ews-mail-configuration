@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - 5000:5000
+    environment:
+      - EXCHANGE_SERVER_URL
+      - EXCHANGE_SERVER_DOMAIN
+      - EXCHANGE_MAIL_USERNAME
+      - EXCHANGE_MAIL_PASSWORD
