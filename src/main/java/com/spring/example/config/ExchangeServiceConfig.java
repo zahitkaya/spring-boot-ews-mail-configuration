@@ -22,12 +22,9 @@ public class ExchangeServiceConfig {
     @Bean
     public ExchangeService configureExchangeService() throws URISyntaxException {
         service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
-        var a = environment.getProperty("exchange.server.url");
         service.setUrl(new URI(environment.getProperty("exchange.server.url")));
 
-
         ExchangeCredentials credentials = new WebCredentials(environment.getProperty("exchange.mail.username"), environment.getProperty("exchange.mail.password"), environment.getProperty("exchange.server.domain"));
-
         service.setCredentials(credentials);
 
         return service;
